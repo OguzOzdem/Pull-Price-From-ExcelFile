@@ -22,6 +22,7 @@ class MainWindow(QMainWindow,Product,Calculate):
 
         self.qt.pushButton.clicked.connect(self.UrunGetir)
 
+        self.qt.DolarKuruText.setReadOnly(True)
     def UrunGetir(self):
 
         urun = self.qt.AramaYapacagnUrun.text()
@@ -36,9 +37,9 @@ class MainWindow(QMainWindow,Product,Calculate):
             if i % 3 == 0:
                 self.qt.tableWidget.setItem(r, 0, QTableWidgetItem(str(list[i])))
             if i % 3 == 1:
-                self.qt.tableWidget.setItem(r, 1, QTableWidgetItem(str(list[i])+"  tl"))
+                self.qt.tableWidget.setItem(r, 1, QTableWidgetItem(str(list[i])+"  $"))
             if i % 3 == 2:
-                self.qt.tableWidget.setItem(r, 2, QTableWidgetItem(str(list[i])+"  $"))
+                self.qt.tableWidget.setItem(r, 2, QTableWidgetItem(str(list[i])+"  tl"))
                 r = r + 1
 
 app = QApplication([])
